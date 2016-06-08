@@ -2,22 +2,25 @@
   "name": "uif-8",
   "version": "0.1.0",
   "description": "Universal Information Format",
-  "main": "gulpfile.js",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "build": "echo \"Foobar\" && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --debug-brk"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BurtHarris/UIF8.git"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "Burt Harris",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/BurtHarris/UIF8/issues"
   },
-  "homepage": "https://github.com/BurtHarris/UIF8#readme"
+  "homepage": "https://github.com/BurtHarris/UIF8#readme",
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "gulp": "^3.9.1",
+    "gulp-markdown": "^1.2.0"
+  }
 }
