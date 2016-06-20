@@ -1,9 +1,9 @@
 # IIX: Internet Information eXchange  
 ![My sigil](doc/Sigil-small.png) *  Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*
 
-This project defines **IIX**, a new flexible byte-oriented [sesson layer](https://en.wikipedia.org/wiki/Session_layer) protocol; or it can be considered a streaming information [serialization](https://en.wikipedia.org/wiki/Serialization) format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.   
+This project is for the design **IIX**, a flexible byte-oriented [sesson layer](https://en.wikipedia.org/wiki/Session_layer) protocol; or streaming information [serialization](https://en.wikipedia.org/wiki/Serialization) format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.
 
-IIX uses a syntax focused on represented information compactly and efficently. Contrasting IIX to JSON, this new format wasn't designed to be directly compatible with plain text editors or tools.  The machine-to-machine primary scenario use case permits frugally leveraging the fully 8-bit transparent protocols used in the modern internet. Instead of visible punctuation like XML and JSON, IIX byte sequences that can never appear in UTF-8 as a way to extend it to represent information rather than just text.   Punctuation characters lik brackets, commas, quotes and spaces never  need special treatment.
+IIX uses a syntax focused on represented information compactly and efficently. Contrasting IIX to JSON, this new format wasn't designed to be directly compatible with plain text editors or tools.  The machine-to-machine scenario permits frugally leveraging the fully 8-bit transparent protocols used in the modern internet. Instead of visible punctuation like XML and JSON, IIX uses certain byte sequences that can never appear in UTF-8 as a way to extend it to represent information rather than just text.   Punctuation characters lik brackets, commas, quotes and spaces never  need special treatment.
 
 ## Extending UTF-8 into IIX
 
@@ -27,7 +27,7 @@ IIX goes beyond the capabilities of UTF-8 and JSON by borrowing *concepts* from 
 
 - Single byte representations of the most common non-textual values like **0, 1, true, false,** and **null**.
 
-- Single byte introduction of the most common information structure elements like tabular data, lists/arrays, structures/objects, self-desribing schema, etc.  
+- Single byte introduction of the most common information structure elements like tabular data, lists, arrays, maps, structures, objects, self-desribing schema, etc.  
 
 - Self delimiting variable-length binary numbers, repeated values, object references, and schema references. 
 
@@ -35,6 +35,13 @@ IIX goes beyond the capabilities of UTF-8 and JSON by borrowing *concepts* from 
  
 But IIX doesn't simply incoroporate these formats blindly, IIX assigns each of the above a code in the IIX introducer range (hex 80 - BF).   These permit use of non-textual encodings that can never conflict with UTF-8.  For example within tabular data, the field names don't need to be repeated, and IIX terminators are used to delimit character/string values, so no characters never need to be treated specially.
 
-## In design - code unstable    
 
-The code checked into this project should presently be considered completely experimental, it's mostly intended to confirm certain assumptions important to a JavaScript implementation.   A reference implementation in JavaScript is planned, but at this point it's best to consider IIX a design in progress.
+## Alternatives considered or to consider
+
+IIX is by no means the first attempt to implement an binary-optimized information representation similar to JSON.   Over many years this author has examined other serialization formats/protocols, including as [ASCII information seperators](https://en.wikipedia.org/wiki/Delimiter#ASCII_delimited_text), [Apache Thrift](https://thrift.apache.org/), [BSON](http://bsonspec.org/), Corba, DCOM, [Protocol Buffers](https://developers.google.com/protocol-buffers/), [TIFF](https://en.wikipedia.org/wiki/Tagged_Image_File_Format), [XML non-extractive parsing](http://www.xml.com/pub/a/2004/05/19/parsing.html), [YAML](http://yaml.org/), even [ZIP](https://en.wikipedia.org/wiki/Zip_(file_format)) files.  So far, none seem based on the same design considerations, but all have had some influence on this design.
+
+*I recently discovered [Amazon's ION](http://amznlabs.github.io/ion-docs/index.html), which seems to come closer than the above.  So far however, I haven't been able it at a design level.  It seems that ION uses manditory length prefixes, reminding me of TIFF.  Depending on the data to be serialized, skip scanning based on these lengths can be a significant benefit, but it seems to add unnecessary overhead to small, simple elements, and complicate a streaming implementation where not all of the data is available at the beginning of encoding.*
+
+## Pre-relesae status - *code unusable or unstable*    
+
+Any code checked into this project should presently be considered completely experimental, it's mostly intended to confirm certain assumptions important to a JavaScript implementation.   A reference implementation in JavaScript is planned, but at this point it's best to consider IIX a design in progress.
