@@ -1,7 +1,7 @@
 {
-  "name": "uif-8",
+  "name": "IIX",
   "version": "0.1.1",
-  "description": "Universal Information Format",
+  "description": "Internet Information eXchange",
   "directories": {
     "doc": "doc"
   },
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BurtHarris/UIF8.git"
+    "url": "git+https://github.com/BurtHarris/IIX.git"
   },
   "author": "Burt Harris",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/BurtHarris/UIF8/issues"
+    "url": "https://github.com/BurtHarris/IIX/issues"
   },
-  "homepage": "https://github.com/BurtHarris/UIF8#readme",
+  "homepage": "https://github.com/BurtHarris/IIX#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-markdown": "^1.2.0",
@@ -25,6 +25,5 @@
     "semver": "^5.1.0"
   },
   "dependencies": {
-    "mocha": "^2.5.3"
   }
 }
