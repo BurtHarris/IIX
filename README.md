@@ -5,7 +5,7 @@ This project defines **IIX**, a new flexible byte-oriented [sesson layer](https:
 
 IIX uses a syntax focused on represented information compactly and efficently. Contrasting IIX to JSON, this new format wasn't designed to be directly compatible with plain text editors or tools.  The machine-to-machine primary scenario use case permits frugally leveraging the fully 8-bit transparent protocols used in the modern internet. Instead of visible punctuation like XML and JSON, IIX byte sequences that can never appear in UTF-8 as a way to extend it to represent information rather than just text.   Punctuation characters lik brackets, commas, quotes and spaces never  need special treatment.
 
-# Extending UTF-8 into IIX
+## Extending UTF-8 into IIX
 
 The well-defined structure of UTF-8 has certain explicit constraints which allow for it to be frugally extended, as illustrated by this chart: 
 
@@ -21,7 +21,7 @@ The IIX protocol starts with the following frugal assumptions for converting bet
 
 The highly regular structure of IIX allows for a highly efficent yet simple state machine scanner to efficently identify element boundries within a IIX bytestream.  The selection this representations allows for much of the scanning to be achieved using [Single Instruction Multiple Data (SIMD)](https://en.wikipedia.org/wiki/SIMD) instruction sets, even when implemented in high-level languages like modern JavaScript.  Design choice can lead to an order of magnitude reduction in the scanning time on modern processors, which have been optimized to include SIMD for streaming multimedia processing and other applicaitons.
 
-# IIX goes beyond JSON
+## IIX goes beyond JSON
 
 IIX goes beyond the capabilities of UTF-8 and JSON by borrowing *concepts* from other modern and mature knowledge representation standards like:
 
@@ -34,3 +34,7 @@ IIX goes beyond the capabilities of UTF-8 and JSON by borrowing *concepts* from 
 - Length-prefixed BLOB data formats which can be skip-scanned.
  
 But IIX doesn't simply incoroporate these formats blindly, IIX assigns each of the above a code in the IIX introducer range (hex 80 - BF).   These permit use of non-textual encodings that can never conflict with UTF-8.  For example within tabular data, the field names don't need to be repeated, and IIX terminators are used to delimit character/string values, so no characters never need to be treated specially.
+
+## In design - code unstable    
+
+The code checked into this project should presently be considered completely experimental, it's mostly intended to confirm certain assumptions important to a JavaScript implementation.   A reference implementation in JavaScript is planned, but at this point it's best to consider IIX a design in progress.
