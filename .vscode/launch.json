@@ -5,11 +5,11 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/scannerTest.js",
+            "program": "C:\\Users\\Burt_\\AppData\\Roaming\\npm\\node_modules\\mocha\\bin\\_mocha",
             "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
+            "args": ["bufferedTransformTest"],
+            "cwd": "${workspaceRoot}/dist/test",
+            "preLaunchTask": "tsc",
             "runtimeExecutable": null,
             "runtimeArgs": [
                 "--nolazy"
@@ -18,9 +18,10 @@
                 "NODE_ENV": "development"
             },
             "externalConsole": false,
-            "sourceMaps": false,
-            "outDir": null
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/dist"
         },
+
         {
             "name": "Attach",
             "type": "node",

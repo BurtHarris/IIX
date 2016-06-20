@@ -1,7 +1,15 @@
-import * as Scanner from './scanner';
+import * as Scanner from '../scanner';
+import * as stream from 'stream';
+import fs = require("fs");
 
 function testScanner(bytes:any[]) {
+
+    
     var buffer = new Buffer(bytes);
+    var writable = fs.createWriteStream(__dirname + "/testScanner.dat");
+    writable.write(buffer);
+    writable.end();
+
     var scanner = new Scanner.Scanner(buffer);
     scanner.scan();
     console.log(scanner);

@@ -1,6 +1,6 @@
 {
   "name": "uif-8",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Universal Information Format",
   "directories": {
     "doc": "doc"
@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/BurtHarris/UIF8#readme",
   "devDependencies": {
-    "mocha": "^2.3.3",
     "gulp": "^3.9.1",
-    "gulp-markdown": "^1.2.0"
+    "gulp-markdown": "^1.2.0",
+    "mocha": "^2.5.3",
+    "semver": "^5.1.0"
+  },
+  "dependencies": {
+    "mocha": "^2.5.3"
   }
 }
