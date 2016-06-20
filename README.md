@@ -1,5 +1,5 @@
 # IIX: Internet Information eXchange  
-![My sigil](doc/sigil-small.png) *  Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*
+![My sigil](doc/Sigil-small.png) *  Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*
 
 This project defines **IIX**, a new flexible byte-oriented [sesson layer](https://en.wikipedia.org/wiki/Session_layer) protocol; or it can be considered a streaming information [serialization](https://en.wikipedia.org/wiki/Serialization) format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.   
 
