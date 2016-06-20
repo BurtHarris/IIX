@@ -1,13 +1,10 @@
 # IIX: Internet Information eXchange  
-<div align="left">![My sigil](doc/sigil-small.png)</div><div align="left">*Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*</div>
+![My sigil](doc/sigil-small.png)*  Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*
 
-This project defines **IIX**, a new flexible byte-oriented sesson layer protocol 
-(fitting well into level 6 of the OSI model.)   Alternately 
-IIX can be considered an [information serialization] format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.   
+This project defines **IIX**, a new flexible byte-oriented [sesson layer](https://en.wikipedia.org/wiki/Session_layer) protocol; or it can be considered a streaming information [serialization](https://en.wikipedia.org/wiki/Serialization) format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.   
 
 IIX uses a syntax focused on represented information compactly and efficently. Contrasting IIX to JSON, this new format wasn't designed to be directly compatible with plain text editors or tools.  The machine-to-machine primary scenario use case permits frugally leveraging the fully 8-bit transparent protocols used in the modern internet. Instead of visible punctuation like XML and JSON, IIX byte sequences that can never appear in UTF-8 as a way to extend it to represent information rather than just text.   Punctuation characters lik brackets, commas, quotes and spaces never  need special treatment.
 
----
 # Extending UTF-8 into IIX
 
 The well-defined structure of UTF-8 has certain explicit constraints which allow for it to be frugally extended, as illustrated by this chart: 
@@ -36,4 +33,4 @@ IIX goes beyond the capabilities of UTF-8 and JSON by borrowing *concepts* from 
 
 - Length-prefixed BLOB data formats which can be skip-scanned.
  
-But IIX doesn't simply incoroporate these formats blindly, IIX each assigning it a code in the IIX introducer range (hex 80 - BF), permitting non-textual encodings that can never conflict with UTF-8.  For example within tabular data, the field names  don't need to be repeated, and IIX terminators are used to delimit character/string values, so no characters never need to be treated specially.
+But IIX doesn't simply incoroporate these formats blindly, IIX assigns each of the above a code in the IIX introducer range (hex 80 - BF).   These permit use of non-textual encodings that can never conflict with UTF-8.  For example within tabular data, the field names don't need to be repeated, and IIX terminators are used to delimit character/string values, so no characters never need to be treated specially.
