@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BurtHarris/IIX.git"
+    "url": "git+https://github.com/BurtHarris/iix.git"
   },
   "author": "Burt Harris",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/BurtHarris/IIX/issues"
+    "url": "https://github.com/BurtHarris/iix/issues"
   },
-  "homepage": "https://github.com/BurtHarris/IIX#readme",
+  "homepage": "https://github.com/BurtHarris/iix#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-markdown": "^1.2.0",
