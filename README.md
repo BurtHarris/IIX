@@ -1,6 +1,8 @@
 # IIX: Internet Information eXchange  
 ![My sigil](doc/Sigil-small.png) *  Copyright 2016 by Burt Harris,<br> published under the [Apache-2.0 License](LICENSE).*
 
+**Note:** [CBOR, RFC 7049](http://tools.ietf.org/html/rfc7049) seems to have a lot of goals in common with IIX.   While the CBOR representation is quite different, I expect to evaluate it before any further work goes into this spec.
+
 This project is for the design **IIX**, a flexible byte-oriented [sesson layer](https://en.wikipedia.org/wiki/Session_layer) protocol; or streaming information [serialization](https://en.wikipedia.org/wiki/Serialization) format optimized for synergy with [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character string encoding.  IIX has been designed to work well with for modern JavaScript implementations found both in web browsers and the latest generation of host-based environents like Node.js.   Its binary format is intended for machine-to-machine communications, information storage, and synchronization scenarios where text based formats like XML or [JSON](https://en.wikipedia.org/wiki/JSON) is are used today.
 
 IIX uses a syntax focused on represented information compactly and efficently. Contrasting IIX to JSON, this new format wasn't designed to be directly compatible with plain text editors or tools.  The machine-to-machine scenario permits frugally leveraging the fully 8-bit transparent protocols used in the modern internet. Instead of visible punctuation like XML and JSON, IIX uses certain byte sequences that can never appear in UTF-8 as a way to extend it to represent information rather than just text.   Punctuation characters lik brackets, commas, quotes and spaces never  need special treatment.
